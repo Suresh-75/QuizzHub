@@ -1,0 +1,550 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+    font-family: "blackfero";
+    /* font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; */
+    color: white;
+}
+
+a {
+    text-decoration: none;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #3b0b4c;
+}
+
+::-webkit-scrollbar-thumb {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: #8146b4;
+    border-radius: 1rem;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+
+body {
+    background: linear-gradient(45deg, #a32e9e, #9336B4);
+    /* background: linear-gradient(to left, #DD5E89, #F7BB97); */
+    background: url(images/15151444_5556661.jpg);
+    /* background: url(images/liquid-purple-art-painting-abstract-colorful-background-with-color-splash-paints-modern-art.jpg); */
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.navBar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 12vh;
+    background-color: #020e2025;
+    /* background: linear-gradient(45deg, #a32e9e, #9336B4); */
+}
+
+.navBar>ul {
+    padding: 0 5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 5rem;
+    transition: 0.5s;
+    background-color: #20205046
+}
+
+.navBar>ul:hover {
+    background-color: #020e2091;
+}
+
+.userLinks {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 50%;
+}
+
+.quizzLink {
+    color: #9236b4 !important;
+}
+
+.userLinks a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-size: 1rem;
+}
+
+.userLinks>li {
+    color: white;
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-size: 1rem;
+}
+
+.userLinks>li>a {
+    transition: 0.35s;
+}
+
+.userLinks>li>a:hover {
+    color: #9236b4;
+    cursor: pointer;
+}
+
+.loginList {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    width: 15rem;
+}
+
+.quizLogo {
+    font-size: 2.5rem;
+    font-family: "Matchalatte";
+    transition: 0.5s;
+    font-weight: bolder;
+    letter-spacing: 2.5px;
+    color: #ff7f7f;
+    text-shadow: 0px 0px 10px #0c0c0c;
+}
+
+.quizLogo:hover {
+    color: rgb(255, 255, 255);
+    text-shadow: 0px 0px 10px #ff7f7f;
+    cursor: pointer;
+}
+
+.userIconBtn {
+    background-color: rgba(26, 67, 129, 0);
+    border: none;
+    /* border-radius: 0.5rem; */
+    transition: 0.25s;
+    margin: auto;
+    filter: drop-shadow(0px 0px 2px #000000);
+}
+
+.userIconBtn img {
+    width: 30px;
+    transition: 0.35s;
+}
+
+.userIconBtn:hover img {
+    cursor: pointer;
+    filter: drop-shadow(0px 0px 5px #ff7f7f);
+}
+
+.middleContainer {
+    margin: 2rem auto;
+    margin-bottom: 1.2rem;
+    margin-left: 1.7rem;
+    padding: 3rem;
+    width: 95%;
+    /* border: 1px solid black;*/
+    /* box-shadow: 0px 0px 10px #000000; */
+    background-color: #2d2d6d;
+    /* border: 1px solid white; */
+    /* border: 5px solid #000000; */
+    border-radius: 0.5rem;
+    height: 5vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to right, #7e58ddb7, #9236b4e0);
+}
+
+.subSearchIcons {
+    width: 25%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border-left: 2px solid rgb(243, 243, 243);
+    border-right: 2px solid rgb(243, 243, 243);
+    height: 5vh;
+    border-radius: 0.25rem;
+}
+
+.subSearchIcons img {
+    width: 25px;
+    transition: 0.35s;
+}
+
+.subIconName {
+    font-size: 2rem;
+}
+
+.subSearchIcons a:hover img {
+    cursor: pointer;
+    margin-bottom: 1rem;
+    filter: drop-shadow(0px 10px 5px #aaaaaa);
+}
+
+.mainBodyContainer {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+
+.searchSection {
+    height: 95%;
+    display: flex;
+    width: 90%;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    /* background-color: #0426588f; */
+    background-color: #3a0b59ac;
+    /* background: linear-gradient(to left, #e47399, #F7BB97); */
+    box-shadow: 0px 0px 10px #3a0b5975;
+    /* border: 5px solid #000000; */
+    border-radius: 0.5rem;
+    margin-left: 1.5rem;
+}
+
+.searchSection section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 3rem;
+}
+
+.searchSection form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.userSearchBtn {
+    height: max-content;
+    background-color: #303079;
+    border: 1px solid #202050;
+    padding: 0.65rem;
+    position: relative;
+    font-size: large;
+    /* border: none; */
+    transition: 0.35s;
+}
+
+.userSearchBtn:hover {
+    cursor: pointer;
+    background-color: #9236b4e0;
+}
+
+.searchSection label {
+    font-size: 2rem;
+    padding: 0.75rem 2rem;
+    padding-right: 0.75rem;
+}
+
+.searchSection input {
+    border: 1px solid black;
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+    width: 100%;
+    font-size: 1.5rem;
+    padding: 0.2rem;
+    padding: 0.2rem 0.75rem;
+    height: 2.5rem;
+    color: black;
+}
+
+.foundUsername {
+
+    color: #1f1f1f;
+    font-size: 2rem;
+}
+
+.foundUsername>p {
+    font-size: 1.5rem !important;
+    display: inline-block;
+    margin-left: 0.5rem;
+}
+
+.foundEmail {
+    color: #1f1f1f;
+    font-size: 2rem;
+}
+
+.foundEmail>p {
+    font-size: 1.5rem !important;
+    display: inline-block;
+    margin-left: 0.5rem;
+}
+
+
+.findFriendsDiv>div {
+    /* border: 1px solid white; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: ceter;
+    width: 90%;
+    height: 100%;
+    padding: 0rem 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0px 0px 2px rgb(255, 255, 255);
+    background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
+    background: linear-gradient(to right, #7e58ddb7, #9236b4e0);
+    position: relative;
+}
+
+.foundUserQuizs {
+    /* border: 1px solid white; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 35%;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.foundUserQuiz {
+    font-size: x-large;
+    border-bottom: 1px solid white;
+    padding: 1rem 0;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    /* border: 1px solid white; */
+}
+
+.findFriendsDiv {
+    width: 85%;
+    height: 65%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 2.5rem 0;
+    align-items: center;
+    margin: auto;
+    background-color: #4336b46d;
+    border: 1px solid #4336b46d;
+    box-shadow: 0px 0px 10px #4336b46d;
+    border-radius: 0.5rem;
+}
+
+.findFriendsDiv p {
+    font-size: 4rem;
+}
+
+.profileDisplayContainer {
+    padding: 2rem;
+}
+
+.profilePicture {
+    /* filter: drop-shadow(0px 0px 10px #000000); */
+    position: absolute;
+    border: 3px solid black;
+    width: 8rem;
+    border-radius: 50%;
+    top: 2%;
+    left: 2%;
+}
+
+.userDetails {
+    position: relative;
+    width: 100%;
+    height: 75%;
+    padding: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    border: none;
+    border-radius: 0.5rem;
+    /* background-color: #000814; */
+    /* background: linear-gradient(to left, #e47399, #e47399); */
+    background-color: #3a0b59ac;
+    box-shadow: 0px 0px 10px #3a0b5975;
+    margin-left: -2rem;
+}
+
+.userDetailsContainer {
+    /* border: 5px solid #1d1d33; */
+    border-radius: 0.5rem;
+    background-color: #4336b46d;
+    box-shadow: 0px 0px 10px #4336b46d;
+    /* box-shadow: 0px 0px 10px #6b6666; */
+    padding: 1rem;
+    width: 80%;
+}
+
+.usernameDisplayName {
+    position: relative;
+    left: 20%;
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    padding: 1rem 0;
+    padding-top: 0;
+}
+
+.attemtQuizSection {
+    border-radius: 0.5rem;
+    border: 1px solid rgb(0, 0, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.attemptQuizBtn {
+    background-image: linear-gradient(to right, #00d2ff 0%, #3a7bd5 51%, #00d2ff 100%);
+    padding: 15px 30px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    border-radius: 10px;
+    display: block;
+    border: none;
+    box-shadow: 0px 5px 10px black;
+}
+
+.attemptQuizBtn:hover {
+    background-position: right center;
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.deleteQuizBtn {
+    background-image: linear-gradient(to right, #B24592 0%, #F15F79 51%, #B24592 100%);
+    margin: 10px;
+    padding: 0.75rem 1.5rem;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    border-radius: 10px;
+    display: block;
+    font-size: 0.9rem;
+    box-shadow: 0px 2px 10px black;
+}
+
+.deleteQuizBtn:hover {
+    background-position: right center;
+    cursor: pointer;
+    color: #fff;
+    text-decoration: none;
+}
+
+.userQuizDiv {
+    position: relative;
+    width: 80%;
+    padding: 1rem;
+    /* border: 1px solid white; */
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    /* border: 5px solid #1d1d33; */
+    border-radius: 0.5rem;
+    background-color: #4336b46d;
+    box-shadow: 0px 0px 10px #4336b46d;
+}
+
+.addFriendBtn {
+    position: absolute;
+    right: 5%;
+    top: 25%;
+    box-shadow: 0px 0px 10px rgb(0, 0, 0);
+    background-color: rgb(80, 197, 44);
+    width: 20%;
+    margin: 1rem 0;
+    border: none;
+    border-radius: 0.35rem;
+    padding: 0.75rem 1rem;
+    color: white;
+    transition: 0.5s;
+}
+
+.addFriendBtn:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 10px rgb(0, 0, 0);
+    background-color: rgb(67, 165, 37);
+}
+
+.displayNameDetails,
+.userNameDetails {
+    color: #c0c0c0;
+    font-weight: bolder;
+    letter-spacing: 1px;
+    font-size: larger;
+    padding: 1rem;
+    padding-bottom: 0;
+    /* text-shadow: 0px 0px 10px rgb(83, 83, 83); */
+}
+
+.displayNameDetails span,
+.userNameDetails span {
+    font-size: medium;
+    text-shadow: 0px 0px 10px rgb(0, 0, 0);
+    letter-spacing: 2px;
+    padding-bottom: 0;
+}
+
+.aboutDetails {
+    box-shadow: 0px 0px 10px #000000;
+    color: #c0c0c0;
+    font-weight: bolder;
+    letter-spacing: 1px;
+    font-size: large;
+    padding: 1rem;
+    padding-top: 0;
+    /* border: 1px solid #000000; */
+    border-radius: 0.5rem;
+    padding: 1rem;
+}
+
+.aboutDetails span {
+    font-family: sans-serif;
+    font-size: medium;
+    letter-spacing: 2px;
+    padding-top: 0;
+}
+
+.quizCreatedByUser {
+    width: 100%;
+    border-bottom: 1px solid #FFE79B;
+    padding: 1rem;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+@font-face {
+    font-family: "blackfero";
+    src: url(fonts/blackfero-font/Blackfero-Yz6qa.otf);
+}
+
+@font-face {
+    font-family: "blackferoItalic";
+    src: url(fonts/blackfero-font/BlackferoItalic-rgBvp.otf);
+}
+
+@font-face {
+    font-family: "lucy";
+    src: url(fonts/lucy-the-cat-font/LucyTheCatRegular-Bg9x.ttf);
+}
+
+@font-face {
+    /* logofont */
+    font-family: "Matchalatte";
+    src: url(fonts/matcha-latte-font/Matchalatte-w1KV8.ttf);
+}

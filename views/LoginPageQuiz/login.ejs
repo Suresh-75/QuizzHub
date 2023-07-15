@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/LoginPage/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Merriweather&family=Playfair+Display:wght@600&family=Roboto+Slab:wght@400&display=swap"
+        rel="stylesheet">
+    <title>Login-Page</title>
+</head>
+
+<body>
+    <img class="designBlock2" src="LoginPage/images/designBlock2.png" alt="">
+    <img class="designBlock3" src="LoginPage/images/designBlock3.png" alt="">
+    <div class="loginContainer">
+        <section class="loginImage"></section>
+        <form action="/login" method="POST" class="loginForm">
+            <main class="loginFormContainer">
+                <span>
+                    <a href="/home"><span class="quizzHubLogo">QuizzHub</span></a>
+                    <p class="loginTag">Welcome Back !</p>
+                    <p class="WelcomeTag">Enter your crendentials to continue</p>
+                </span>
+                <main>
+                    <section class="usernameContainer">
+                        <label for="userName"><img src="LoginPage/images/user.png" alt=""></label>
+                        <input type="text" id="userNameSignUp" name="username" placeholder="Username">
+                    </section>
+                    <section class="passwordContainer">
+                        <label for="password"><img src="LoginPage/images/lock.png" alt=""></label>
+                        <input type="password" id="password" name="password" placeholder="password">
+                    </section>
+                </main>
+                <section class="loginPage">
+                    <button type="submit" class="loginBtn">Login</button>
+                </section>
+                <p class="signUpLink">Don't have an account ? <a href="/signUp" class="signUpbutton">Sign Up</a> </p>
+            </main>
+        </form>
+    </div>
+</body>
+
+</html>

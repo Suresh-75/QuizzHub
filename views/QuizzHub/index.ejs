@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/HomePage/styles.css">
+    <title>QuizzHub</title>
+</head>
+
+<body>
+    <main>
+        <nav class="navBar">
+            <ul>
+                <li class="quizLogo">QuizzHub</li>
+                <ul class="userLinks">
+                    <li><a class="linkkHomePage" href="/home">Home</a></li>
+                    <li><a href="/createQuiz">Quiz</a></li>
+                    <li><a href="">About</a></li>
+                </ul>
+                <ul class="loginList">
+                    <% if(!currentUser){ %>
+                        <li><a href="/login" class="loginBtn">Log In</a></li>
+                        <li><a href="/signUp" class="signUpBtn">Sign Up</a></li>
+                        <%} else{%>
+                            <li><a href="/logout" class="logoutBtn">Log out</a></li>
+                            <% }%>
+                </ul>
+            </ul>
+        </nav>
+        <section class="mainIntroSection">
+            <span class="pageQuotes">
+                <p class="mainQuote">QUIZ, <span>BOND</span>, CONQUER !</p>
+                <p class="subQuote">"Embrace the thrill of a <span>friendly challenge</span> , where quizzes become a
+                    playground for
+                    friendship and shared triumphs."</p>
+                <a href="/login" class="getStartedBtn">Get Started</a>
+            </span>
+            <div class="imageDivision">
+                <img src="HomePage/images/vector copy.png" alt="">
+            </div>
+        </section>
+    </main>
+    <section class="featuresContainer">
+        <p class="featuresHeader">Feature Highlights: <span>Enhancing Your Quiz Experience</span></p>
+        <div class="featuresMainDiv">
+            <img class="designBlock1" src="HomePage/images/designBlock.png" alt="">
+            <div class="customizeDiv">
+                <img src="HomePage/images/illustration-your-users.svg" alt="">
+                <span>
+                    <p>Customize your profile</p>
+                    <span>Have your own profile picture ,name , and much more..</span>
+                </span>
+            </div>
+            <img class="designBlock2" src="HomePage/images/designBlock.png" alt="">
+            <img class="designBlock3" src="HomePage/images/designBlock.png" alt="">
+            <div class="connectFriendsDiv">
+                <span>
+                    <p>Connect with your friends</p>
+                    <span>Connect with your friends and get access to their private quiz</span>
+                </span>
+                <img src="HomePage/images/illustration-grow-together.svg" alt="">
+            </div>
+            <img class="designBlock4" src="HomePage/images/designBlock.png" alt="">
+            <div class="challengeFriendsDiv">
+                <img src="HomePage/images/illustration-flowing-conversation.svg" alt="">
+                <span>
+                    <p>Challenge your friends</p>
+                    <span>Create your own quiz and challenge your friends</span>
+                </span>
+            </div>
+            <img class="designBlock5" src="HomePage/images/designBlock.png" alt="">
+        </div>
+    </section>
+    <footer class="footerContainer">
+        <div class="quizLogoFooter">QuizzHub</div>
+        <div class="contactDetailsFooter">
+            <p><img src="HomePage/images/telephone.png" alt="">8667838349</p>
+            <p><img src="HomePage/images/email.png" alt=""> suresh710k@gmail.com</p>
+        </div>
+        <div class="navBarLinksFooter">
+            <a href="">Home</a>
+            <a href="">Quiz</a>
+            <a href="">About</a>
+        </div>
+        <div class="socialmediaIcons">
+            <a class="twitterIcon"><img src="HomePage/images/twitter-svgrepo-com.svg" alt=""></a>
+            <a class="faceBookIcon"><img src="HomePage/images/facebook.png" alt=""></a>
+            <a class="instagramIcon"><img src="HomePage/images/instagram-1-svgrepo-com.svg" alt=""></a>
+        </div>
+    </footer>
+    <script src="main.js"></script>
+</body>
+
+</html>

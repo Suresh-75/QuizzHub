@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/AttemptQuiz/styles.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <nav class="navBar">
+        <ul>
+            <li class="quizLogo">QuizzHub</li>
+            <ul class="userLinks">
+                <li><a href="/home">Home</a></li>
+                <li><a class="quizzLink" href="/createQuiz">Quiz</a></li>
+                <li><a href="">About</a></li>
+            </ul>
+            <li><button class="userIconBtn"><img src="/AttemptQuiz/images/user-svgrepo-com.svg" alt=""></button></li>
+        </ul>
+    </nav>
+    <div class="middleContainer">
+        <div>
+            <p class="subIconName">Attmept Quiz</p>
+        </div>
+        <ul class="subSearchIcons">
+            <li><a><img src="/AttemptQuiz/images/ideas.png" alt=""></a></li>
+            <li><a><img src="/AttemptQuiz/images/friends.png" alt=""></a></li>
+            <li><a><img src="/AttemptQuiz/images/search.png" alt=""></a></li>
+        </ul>
+    </div>
+    <%if(foundQuiz){ %>
+        <form action="/attemptQuiz/<%=foundQuiz.username%>/<%=foundQuiz.QuizName%>/next" method="GET">
+            <%}%>
+                <section class="mainBodyContainer">
+                    <main class="quizQuestionsAndAns">
+                        <%if(!foundQuiz){%>
+                            <p>Over</p>
+                            <%}else{%>
+                                <p class="quizName">
+                                    <%=foundQuiz.QuizName%>
+                                </p>
+                                <main class="qContainer">
+                                    <p class="quizQuestion">
+                                        <%=foundQuiz.question %>
+                                    </p>
+                                    <section class="optionsContainer">
+                                        <div>
+                                            <div>
+                                                <input id="ques1" name="ans" type="radio" value=<%=randomOptions[0]%>>
+                                                <label for="ques1">
+                                                    <%=randomOptions[0]%>
+                                                </label>
+                                            </div>
+                                            <div>
+                                                <input id="ques2" name="ans" type="radio" value=<%=randomOptions[1]%>>
+                                                <label for="ques2">
+                                                    <%=randomOptions[1]%>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div>
+                                                <input id="ques3" name="ans" type="radio" value=<%=randomOptions[2]%>>
+                                                <label for="ques3">
+                                                    <%=randomOptions[2]%>
+                                                </label>
+                                            </div>
+                                            <div>
+                                                <input id="ques4" name="ans" type="radio" value=<%=randomOptions[3]%>>
+                                                <label for="ques4">
+                                                    <%=randomOptions[3]%>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </main>
+                                <%}%>
+                    </main>
+                    <main class="quizScores">
+                        <p class="currentScore">Score:<span>
+                                <%=score%>
+                            </span> </p>
+                        <section class="buttons">
+                            <%if(!foundQuiz){%>
+                                <button style="opacity: 0.5;" class="nextBtn">NEXT-QUESTION</button>
+                                <%}else{%>
+                                    <button type="submit" class="nextBtn">NEXT-QUESTION</button>
+                                    <%}%>
+                                        <%if(!foundQuiz){%>
+                                            <button class="subBtn">SUBMIT</button>
+                                            <%}else{%>
+                                                <button style="opacity: 0.5;" class="subBtn">SUBMIT</button>
+                                                <%}%>
+
+                        </section>
+                    </main>
+                </section>
+        </form>
+
+        <script src="AttemptQuiz/main.js"></script>
+</body>
+
+</html>

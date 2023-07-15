@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/CreateQuiz/styles.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <nav class="navBar">
+        <ul>
+            <li class="quizLogo">QuizzHub</li>
+            <ul class="userLinks">
+                <li><a href="/home">Home</a></li>
+                <li><a class="quizzLink" href="/createQuiz">Quiz</a></li>
+                <li><a href="">About</a></li>
+            </ul>
+            <li><button class="userIconBtn"><img src="images/user-svgrepo-com.svg" alt=""></button></li>
+        </ul>
+    </nav>
+    <div class="middleContainer">
+        <div>
+            <p class="subIconName">Create Quiz</p>
+        </div>
+        <ul class="subSearchIcons">
+            <li><a><img src="images/ideas.png" alt=""></a></li>
+            <li><a><img src="images/friends.png" alt=""></a></li>
+            <li><a href="/serachFriend"><img src="images/search.png" alt=""></a></li>
+        </ul>
+    </div>
+    <section class="mainBodyContainer">
+        <div>
+            <form action="/createQuiz/question" method="POST">
+                <section class="quizzName">
+                    <%if(hide===false){%>
+                        <label name="QuizName" for="quizName">Quiz-Name</label>
+                        <input name="QuizName" type="text" id="quizName" placeholder="Quiz" value=<%=QuizN%>>
+                        <%}else{%>
+                            <label name="QuizName" for="quizName">
+                                <%=QuizN%>
+                            </label>
+                            <input name="QuizName" type="text" id="quizName" placeholder="Quiz" style="display: none;"
+                                value=<%=QuizN%>>
+                            <%}%>
+                </section>
+                <section class="qNaSection">
+                    <input style="display: none;" name="username" type="text" id="username"
+                        value=<%=username.username%>>
+                    <main class="questionSection">
+                        <label for="quizQ">Q <%=Qnumber%></label>
+                        <input name="question" type="text" id="quizQ" placeholder="Enter Question">
+                    </main>
+                    <main class="ansSection">
+                        <section>
+                            <section>
+                                <label for="quizA1">OPT-1</label>
+                                <input name="option1" type="text" id="quizA1">
+                            </section>
+                            <section>
+                                <label for="quizA2">OPT-2</label>
+                                <input name="option2" type="text" id="quizA2">
+                            </section>
+                        </section>
+                        <section>
+                            <section>
+                                <label for="quizA3">OPT-3</label>
+                                <input name="option3" type="text" id="quizA3">
+                            </section>
+                            <section>
+                                <label for="quizA4">ANS</label>
+                                <input name="option4" type="text" id="quizA4">
+                            </section>
+                        </section>
+                    </main>
+                    <main class="buttons">
+                        <a href="/createQuiz/submit" class="submitBtn">SUBMIT-QUIZ</a>
+                        <button type="submit" class="nextBtn"><img src="images/next (1).png" alt=""></button>
+                    </main>
+                </section>
+            </form>
+        </div>
+    </section>
+</body>
+
+</html>

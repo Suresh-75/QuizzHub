@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/SignUpPage/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Merriweather&family=Playfair+Display:wght@600&family=Roboto+Slab:wght@400&display=swap"
+        rel="stylesheet">
+    <title>Login-Page</title>
+</head>
+
+<body>
+    <img class="designBlock2" src="SignUpPage/images/designBlock2.png" alt="">
+    <img class="designBlock3" src="SignUpPage/images/designBlock3.png" alt="">
+    <div class="loginContainer">
+        <section class="loginImage"></section>
+        <form action="/signUp" method="POST" class="signUpForm">
+            <main class="signUpFormContainer">
+                <span>
+                    <a href="/home"><span class="quizzHubLogo">QuizzHub</span></a>
+                    <p class="signUpTag">Welcome to QuizzHub</p>
+                    <!-- <p class="WelcomeTag">Enter your crendentials to continue</p> -->
+                </span>
+                <main>
+                    <section class="EmailContainer">
+                        <label for="userName"><img src="SignUpPage/images/email.png" alt=""></label>
+                        <input type="text" id="userNameSignUp" name="email" placeholder="email">
+                    </section>
+                    <section class="usernameContainer">
+                        <label for="userName"><img src="SignUpPage/images/user.png" alt=""></label>
+                        <input type="text" id="userNameSignUp" name="username" placeholder="Username">
+                    </section>
+                    <section class="passwordContainer">
+                        <label for="userName"><img src="SignUpPage/images/lock.png" alt=""></label>
+                        <input type="password" id="passwordSignUp" name="password" placeholder="password">
+                    </section>
+                </main>
+                <section class="SignUpPage">
+                    <button type="submit" class="signUpBtn">Sign Up</button>
+                </section>
+                <p class="signUpLink">Already have an account ? <a href="/login" class="loginbutton">Login</a> </p>
+            </main>
+        </form>
+    </div>
+</body>
+
+</html>

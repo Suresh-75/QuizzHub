@@ -1,0 +1,545 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+    font-family: "blackfero";
+    text-decoration: none;
+}
+
+
+body>main {
+    height: 100vh;
+    background-color: rgb(15, 15, 15);
+    background: url(images/bg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.navBar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+
+}
+
+.navBar>ul {
+    padding: 0 5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 5rem;
+    transition: 0.5s;
+}
+
+.navBar>ul:hover {
+    background-color: #3637382c;
+}
+
+
+.userLinks {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 50%;
+}
+
+.userLinks a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-size: larger;
+}
+
+.userLinks>li {
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-size: 1rem;
+}
+
+.userLinks>li>a {
+    transition: 0.35s;
+}
+
+.userLinks>li>a:hover {
+    color: #386fd4;
+    cursor: pointer;
+}
+
+.linkkHomePage {
+    color: #386fd4 !important;
+}
+
+.loginList {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 15rem;
+}
+
+.quizLogo {
+    font-size: 2.5rem;
+    font-family: "Matchalatte";
+    transition: 0.5s;
+    font-weight: bolder;
+    letter-spacing: 2.5px;
+    color: #ff7f7f;
+    text-shadow: 0px 0px 10px #cbcbcb;
+}
+
+.quizLogo:hover {
+    color: rgb(255, 255, 255);
+    text-shadow: 0px 0px 10px #ff7f7f;
+    cursor: pointer;
+}
+
+.loginBtn {
+    padding: 0.5rem 1rem;
+    background-color: rgba(255, 0, 0, 0);
+    border: none;
+    border-radius: 0.5rem;
+    font-weight: bolder;
+    color: white;
+    font-size: large;
+    transition: 0.25s;
+}
+
+.loginBtn:hover {
+    color: #386fd4 !important;
+    cursor: pointer;
+    text-shadow: 0px 0px 50px rgb(107, 32, 177);
+}
+
+.logoutBtn {
+    background-image: linear-gradient(to right, #EB3349 0%, #F45C43 51%, #EB3349 100%);
+    margin-left: 3rem;
+    padding: 0.75rem 1rem;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    border-radius: 10px;
+    display: block;
+}
+
+.logoutBtn:hover {
+    background-position: right center;
+    color: #fff;
+    text-decoration: none;
+}
+
+.signUpBtn {
+    background-image: linear-gradient(to right, #070746 0%, #1CB5E0 51%, #03034e 100%);
+    padding: 0.65rem 1rem;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    border-radius: 10px;
+    /* border: 1px solid rgb(129, 129, 129); */
+    display: block;
+    border: none;
+    box-shadow: 0px 0px 10px #0e546894;
+    margin: 0 1rem;
+}
+
+.signUpBtn:hover {
+    background-position: right center;
+    cursor: pointer;
+}
+
+.mainIntroSection {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+.pageQuotes {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+.mainQuote {
+    color: white;
+    font-weight: bolder;
+    font-size: 4.2rem;
+    width: 100%;
+    text-align: center;
+    padding: 2rem;
+    text-shadow: 0px 0px 10px rgb(0, 0, 0);
+    font-family: "blackferoItalic";
+}
+
+.mainQuote>span {
+    color: #0F1F36;
+    text-shadow: 0px 0px 10px rgb(255, 255, 255);
+    font-weight: bolder;
+    font-family: "blackferoItalic";
+}
+
+.subQuote {
+    color: rgb(0, 0, 0);
+    font-weight: lighter;
+    font-size: 1.2rem;
+    width: 80%;
+    text-align: center;
+}
+
+.subQuote>span {
+    color: #ff7f7f;
+    font-weight: bolder;
+}
+
+.imageDivision {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.imageDivision>img {
+    width: 90%;
+    filter: drop-shadow(0px 0px 10px #292929);
+}
+
+.getStartedBtn {
+    margin: 1rem 0;
+    font-size: larger;
+    background-image: linear-gradient(to right, #070746 0%, #1CB5E0 51%, #03034e 100%);
+    padding: 0.75rem 1rem;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    border-radius: 10px;
+    display: block;
+    border: none;
+    box-shadow: 0px 0px 10px rgb(85, 85, 85);
+}
+
+.getStartedBtn:hover {
+    background-position: right center;
+    cursor: pointer;
+    box-shadow: 5px 5px 10px rgb(61, 61, 61);
+}
+
+.featuresContainer {
+    /* padding: 5rem 0; */
+    position: relative;
+    padding: 4rem 0;
+    min-height: 100vh;
+    background-color: rgb(245, 245, 245);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 10rem;
+}
+
+.featuresHeader {
+    text-align: center;
+    font-size: 3rem;
+    width: 50%;
+    margin-bottom: 5rem;
+    padding: 1rem;
+    /* border-top: 3px solid black; */
+    text-shadow: 0px 0px 10px #ff7f7f;
+    /* background-color: white; */
+    border-bottom: 3px solid rgb(185, 185, 185);
+    transition: 0.5s;
+    color: #ff7f7f;
+}
+
+.featuresHeader span {
+    color: black;
+    text-shadow: 0px 0px 10px #f4f4f4;
+}
+
+.designBlock1 {
+    opacity: 0.5;
+    filter: drop-shadow(0px 0px 4px #000000);
+    position: absolute;
+    z-index: 0;
+    top: 15%;
+    left: 10%;
+}
+
+.designBlock2 {
+    opacity: 0.8;
+    filter: drop-shadow(0px 0px 4px #000000);
+    position: absolute;
+    z-index: 2;
+    top: 30%;
+    right: 10%;
+}
+
+.designBlock3 {
+    opacity: 0.9;
+    filter: drop-shadow(0px 0px 4px #000000);
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    left: 10%;
+}
+
+.designBlock4 {
+    opacity: 0.7;
+    filter: drop-shadow(0px 0px 4px #000000);
+    position: absolute;
+    z-index: -1;
+    top: 66%;
+    right: 10%;
+}
+
+.designBlock5 {
+    opacity: 0.7;
+    filter: drop-shadow(0px 0px 4px #000000);
+    position: absolute;
+    z-index: 0;
+    top: 83%;
+    left: 10%;
+}
+
+.featuresMainDiv {
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem
+}
+
+.challengeFriendsDiv {
+    opacity: 0.8;
+    background-color: white;
+    /* border: 1px solid white; */
+    box-shadow: 0px 0px 10px rgb(165, 162, 162);
+    padding: 3.5rem 4.5rem;
+    border-radius: 0.75rem;
+    width: 70%;
+    /* border: 1px solid white; */
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+.challengeFriendsDiv>img {
+    /* border: 2px solid black; */
+    /* display: inline; */
+    width: 100%;
+    height: 100%;
+}
+
+.challengeFriendsDiv>span {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.connectFriendsDiv {
+    opacity: 0.8;
+    background-color: white;
+    /* border: 1px solid white; */
+    box-shadow: 0px 0px 10px rgb(165, 162, 162);
+    padding: 3.5rem 4.5rem;
+    border-radius: 0.75rem;
+    width: 70%;
+    height: 20rem;
+    /* border: 1px solid white; */
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+
+.connectFriendsDiv>img {
+    /* border: 2px solid black; */
+    /* display: inline; */
+    width: 100%;
+}
+
+.connectFriendsDiv>span {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.customizeDiv {
+    opacity: 0.9;
+    z-index: 1;
+    background-color: white;
+    /* border: 1px solid white; */
+    box-shadow: 0px 0px 10px rgb(165, 162, 162);
+    padding: 3.5rem 4.5rem;
+    border-radius: 0.75rem;
+    width: 70%;
+    height: 20rem;
+    /* border: 1px solid white; */
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+.customizeDiv>img {
+    /* border: 2px solid black; */
+    /* display: inline; */
+    width: 100%;
+    height: 100%;
+}
+
+.customizeDiv>span {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.customizeDiv p,
+.challengeFriendsDiv p,
+.connectFriendsDiv p {
+    font-family: "Lucy";
+    font-size: 3rem;
+}
+
+.customizeDiv span,
+.challengeFriendsDiv span,
+.connectFriendsDiv span {
+    /* font-family: "Lucy"; */
+    font-size: 2rem;
+}
+
+.footerContainer {
+    /* margin-top: 5rem; */
+    padding-top: 2rem;
+    height: 10rem;
+    width: 100%;
+    background-color: rgb(16, 28, 59);
+}
+
+.quizLogoFooter {
+    padding: 1rem;
+    margin-left: 3rem;
+    font-size: 2.5rem;
+    font-family: "Matchalatte";
+    transition: 0.5s;
+    font-weight: bolder;
+    letter-spacing: 2.5px;
+    color: #ff7f7f;
+    text-shadow: 0px 0px 10px #000000;
+    width: max-content;
+}
+
+.quizLogoFooter:hover {
+    color: #ffffff;
+    text-shadow: 0px 0px 10px #ff7f7f;
+    cursor: pointer;
+}
+
+.footerContainer {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr
+}
+
+.contactDetailsFooter {
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: start;
+    color: white;
+}
+
+.contactDetailsFooter p {
+    transition: 0.35s;
+}
+
+.contactDetailsFooter p:hover {
+    letter-spacing: 1px;
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.contactDetailsFooter img {
+    width: 20px;
+    margin-right: 10px;
+}
+
+.navBarLinksFooter {
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: start;
+}
+
+.navBarLinksFooter a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.navBarLinksFooter a:hover {
+    color: white;
+    text-decoration: underline;
+    /* letter-spacing: 1px; */
+    font-size: large;
+}
+
+.socialmediaIcons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.socialmediaIcons img {
+    width: 35px;
+    margin: 0.5rem;
+    transition: 0.3s;
+}
+
+.faceBookIcon img {
+    width: 30px;
+}
+
+.faceBookIcon img:hover {
+    cursor: pointer;
+    width: 40px;
+}
+
+.twitterIcon img {
+    width: 30px;
+}
+
+.twitterIcon img:hover {
+    cursor: pointer;
+    width: 40px;
+}
+
+.instagramIcon img:hover {
+    cursor: pointer;
+    width: 45px;
+}
+
+@font-face {
+    font-family: "blackfero";
+    src: url(fonts/blackfero-font/Blackfero-Yz6qa.otf);
+}
+
+@font-face {
+    font-family: "blackferoItalic";
+    src: url(fonts/blackfero-font/BlackferoItalic-rgBvp.otf);
+}
+
+@font-face {
+    font-family: "lucy";
+    src: url(fonts/lucy-the-cat-font/LucyTheCatRegular-Bg9x.ttf);
+}
+
+@font-face {
+    /* logofont */
+    font-family: "Matchalatte";
+    src: url(fonts/matcha-latte-font/Matchalatte-w1KV8.ttf);
+}

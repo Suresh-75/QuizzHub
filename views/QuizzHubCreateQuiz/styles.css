@@ -1,0 +1,325 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+    font-family: "blackfero";
+    /* font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; */
+    /* color: white; */
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #3b0b4c;
+}
+
+::-webkit-scrollbar-thumb {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: #8146b4;
+    border-radius: 1rem;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+
+body {
+    background: linear-gradient(45deg, #a32e9e, #9336B4);
+    /* background: linear-gradient(to left, #DD5E89, #F7BB97); */
+    background: url(images/15151444_5556661.jpg);
+    /* background: url(images/liquid-purple-art-painting-abstract-colorful-background-with-color-splash-paints-modern-art.jpg); */
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.navBar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 12vh;
+    background-color: #020e2025;
+    /* background: linear-gradient(45deg, #a32e9e, #9336B4); */
+}
+
+.navBar>ul {
+    padding: 0 5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 5rem;
+    transition: 0.5s;
+    background-color: #20205046
+}
+
+.navBar>ul:hover {
+    background-color: #020e2091;
+}
+
+.userLinks {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 50%;
+}
+
+.quizzLink {
+    color: #9236b4 !important;
+}
+
+.userLinks a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-size: 1rem;
+}
+
+.userLinks>li {
+    color: white;
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-size: 1rem;
+}
+
+.userLinks>li>a {
+    transition: 0.35s;
+}
+
+.userLinks>li>a:hover {
+    color: #9236b4;
+    cursor: pointer;
+}
+
+.loginList {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    width: 15rem;
+}
+
+.quizLogo {
+    font-size: 2.5rem;
+    font-family: "Matchalatte";
+    transition: 0.5s;
+    font-weight: bolder;
+    letter-spacing: 2.5px;
+    color: #ff7f7f;
+    text-shadow: 0px 0px 10px #0c0c0c;
+}
+
+.quizLogo:hover {
+    color: rgb(255, 255, 255);
+    text-shadow: 0px 0px 10px #ff7f7f;
+    cursor: pointer;
+}
+
+.userIconBtn {
+    background-color: rgba(26, 67, 129, 0);
+    border: none;
+    /* border-radius: 0.5rem; */
+    transition: 0.25s;
+    margin: auto;
+    filter: drop-shadow(0px 0px 2px #000000);
+}
+
+.userIconBtn img {
+    width: 30px;
+    transition: 0.35s;
+}
+
+.userIconBtn:hover img {
+    cursor: pointer;
+    filter: drop-shadow(0px 0px 5px #ff7f7f);
+}
+
+.middleContainer {
+    color: white;
+    margin: 2rem auto;
+    margin-bottom: 1.2rem;
+    margin-left: 1.7rem;
+    padding: 3rem;
+    width: 95%;
+    /* border: 1px solid black;*/
+    /* box-shadow: 0px 0px 10px #000000; */
+    background-color: #2d2d6d;
+    /* border: 1px solid white; */
+    /* border: 5px solid #000000; */
+    border-radius: 0.5rem;
+    height: 5vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to right, #7e58ddb7, #9236b4e0);
+}
+
+.subSearchIcons {
+    width: 25%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border-left: 2px solid rgb(243, 243, 243);
+    border-right: 2px solid rgb(243, 243, 243);
+    height: 5vh;
+    border-radius: 0.25rem;
+}
+
+.subSearchIcons img {
+    width: 25px;
+    transition: 0.35s;
+}
+
+.subIconName {
+    font-size: 2rem;
+}
+
+.subSearchIcons a:hover img {
+    cursor: pointer;
+    margin-bottom: 1rem;
+    filter: drop-shadow(0px 10px 5px #aaaaaa);
+}
+
+.mainBodyContainer {
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.quizzName {
+    text-align: center;
+    font-size: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0.5rem;
+}
+
+.qNaSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 0;
+    /* border: 1px solid white; */
+    box-shadow: 0px 0px 10px rgb(82, 82, 82);
+    padding: 1rem;
+    background-color: rgba(90, 32, 32, 0.274);
+    border-radius: 1rem;
+}
+
+.quizzName input {
+    height: 2rem;
+    margin: 0 1rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    border: none;
+}
+
+.questionSection {
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+}
+
+.questionSection input {
+    height: 2rem;
+    width: 25rem;
+    margin: 0 1rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    border: none;
+}
+
+.ansSection {
+    width: 100%;
+    /* border: 1px solid rgb(153, 147, 147); */
+    /* grid-template-columns: 1fr 1fr; */
+}
+
+.ansSection input {
+    width: 5rem;
+    margin: 0 1rem;
+    border-radius: 0.25rem;
+    box-shadow: 0px 0px 10px #DA22FF;
+    border: none;
+}
+
+.ansSection section {
+    padding: 1rem;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.buttons {
+    width: 80%;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 1rem;
+    /* border: 1px solid white; */
+}
+
+
+.submitBtn {
+    background-image: linear-gradient(to right, #070746 0%, #1CB5E0 51%, #03034e 100%);
+    padding: 0.35rem 1rem;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    border-radius: 10px;
+    display: block;
+    border: none;
+    margin: 0 1rem;
+}
+
+.submitBtn:hover {
+    background-position: right center;
+    cursor: pointer;
+}
+
+.nextBtn {
+    background: linear-gradient(to right, #DA22FF 0%, #9733EE 51%, #DA22FF 100%);
+    padding: 0.35rem 1rem;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    border-radius: 10px;
+    /* display: flex; */
+}
+
+.nextBtn img {
+    width: 22px;
+    opacity: 0.5;
+}
+
+.nextBtn:hover {
+    cursor: pointer;
+    background-position: right center;
+}
+
+
+
+@font-face {
+    font-family: "blackfero";
+    src: url(fonts/blackfero-font/Blackfero-Yz6qa.otf);
+}
+
+@font-face {
+    font-family: "blackferoItalic";
+    src: url(fonts/blackfero-font/BlackferoItalic-rgBvp.otf);
+}
+
+@font-face {
+    font-family: "lucy";
+    src: url(fonts/lucy-the-cat-font/LucyTheCatRegular-Bg9x.ttf);
+}
+
+@font-face {
+    /* logofont */
+    font-family: "Matchalatte";
+    src: url(fonts/matcha-latte-font/Matchalatte-w1KV8.ttf);
+}
