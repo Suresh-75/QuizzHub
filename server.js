@@ -8,6 +8,7 @@ const session = require("express-session")
 const LocalStrategy = require("passport-local")
 const User = require("./models/user")
 const Question = require("./models/Question")
+const Score = require("./models/scores")
 const methodOverride = require('method-override')
 mongoose.connect('mongodb://127.0.0.1:27017/QuizzHub')
     .then(() => {
@@ -31,7 +32,8 @@ let Qnumber = 1;
 let ExtractedQuiz = []
 let i = 0;
 let score = 0;
-let options = []
+let options = [];
+let userScores = [];
 let quizLength = null;
 let CurrentfoundQuiz1 = null;
 let CurrentfoundQuiz2 = null;
@@ -102,6 +104,7 @@ app.get("/attemptQuiz/:userID/:QuizName/next", async (req, res) => {
     options = [];
     let userAns = req.query.ans
     let { userID } = req.params;
+    let { QuizName } = req.params;
     if (userAns === ans) {
         score += 10;
     }
@@ -113,10 +116,10 @@ app.get("/attemptQuiz/:userID/:QuizName/next", async (req, res) => {
         options.push(ExtractedQuiz[i].option4)
         let randomOptions = options.sort(() => 0.5 - Math.random());
         ans = ExtractedQuiz[i].option4
-        res.render("QuizzHubAttemptQuiz/index", { foundQuiz: ExtractedQuiz[i], randomOptions, score })
+        res.render("QuizzHubAttemptQuiz/index", { foundQuiz: ExtractedQuiz[i], randomOptions, score, userID, QuizName })
     } else {
         let foundQuiz = null;
-        res.render("QuizzHubAttemptQuiz/index", { foundQuiz, score })
+        res.render("QuizzHubAttemptQuiz/index", { foundQuiz, score, userID, QuizName })
     }
 })
 
@@ -158,6 +161,20 @@ app.get("/logout", (req, res) => {
     });
     res.redirect("/home");
 })
+
+app.get("/scoreCards", async (req, res) => {
+    if (!req.isAuthenticated()) {
+        req.flash("error", "You must be logged in");
+        return res.redirect("/login");
+    }
+    i = 0;
+    ExtractedQuiz = [];
+    let { username } = req.user
+    userScores = await Score.find({ "username": username });
+
+    res.render("ScorePage/index", { userScores })
+})
+
 app.get("/createQuiz/submit", async (req, res) => {
     i = 0;
     ExtractedQuiz = [];
@@ -168,12 +185,6 @@ app.get("/createQuiz/submit", async (req, res) => {
     try {
         const username = req.user;
         const enteredQuestion = await Question.insertMany(questionsArray)
-        // const currentUser = req.user.username;
-        // const Ques = await Question.find({});
-        // const UserC = await User.findOne({ username: currentUser })
-        // UserC.createdQuestions.push(Ques);
-        // await UserC.save();
-        // console.log(UserC)
         Qnumber = 1;
         QuizN = null;
         hide = false;
@@ -184,6 +195,20 @@ app.get("/createQuiz/submit", async (req, res) => {
 })
 
 //POST
+app.post("/updateScores/:userID/:QuizName/submit", async (req, res) => {
+    if (!req.isAuthenticated()) {
+        req.flash("error", "You must be logged in");
+        return res.redirect("/login");
+    }
+    const { userID } = req.params;
+    const username = req.user.username;
+    const { QuizName } = req.params;
+    const { score } = req.body;
+    let savedScore = new Score({ "createdUser": userID, QuizName, "score": score, "username": username })
+    savedScore.save();
+    console.log(savedScore)
+    res.redirect("/serachFriend")
+})
 app.post("/userSearchResults", async (req, res) => {
     i = 0;
     ExtractedQuiz = [];
@@ -195,9 +220,15 @@ app.post("/userSearchResults", async (req, res) => {
     }
     const username = req.user;
     let foundQuiz1 = await Question.findOne({ "username": usernameSearch })
-    let foundQuiz2 = await Question.findOne({ "username": usernameSearch, "QuizName": { $ne: foundQuiz1.QuizName } })
-    res.render("QuizzHubQuiz/Quiz", { username, foundUser, foundQuiz1, foundQuiz2, CurrentfoundQuiz1, CurrentfoundQuiz2 })
+    if (!foundQuiz1) {
+        foundQuiz1 = null;
+        let foundQuiz2 = null;
+        res.render("QuizzHubQuiz/Quiz", { username, foundUser, foundQuiz1, foundQuiz2, CurrentfoundQuiz1, CurrentfoundQuiz2 })
 
+    } else {
+        let foundQuiz2 = await Question.findOne({ "username": usernameSearch, "QuizName": { $ne: foundQuiz1.QuizName } })
+        res.render("QuizzHubQuiz/Quiz", { username, foundUser, foundQuiz1, foundQuiz2, CurrentfoundQuiz1, CurrentfoundQuiz2 })
+    }
     // res.render("QuizzHubQuiz/Quiz", { username })
 })
 app.post("/login", passport.authenticate("local"), (req, res) => {
@@ -248,9 +279,7 @@ app.delete("/serachFriend/deleteQuiz/:QuizName", async (req, res) => {
     }
     let { username } = req.user
     let { QuizName } = req.params;
-    console.log(username, QuizName)
     let que = await Question.deleteMany({ "username": username, "QuizName": QuizName })
-    console.log(que)
     res.redirect("/serachFriend")
 })
 

@@ -190,6 +190,37 @@ body {
     grid-template-columns: 2fr 1fr;
 }
 
+.quizOverContainer {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.quizOverContainer>p {
+    font-size: 4rem;
+    margin: 1rem 0;
+}
+
+.quizOverContainer a {
+    font-size: 2rem;
+    font-family: "anwutoktrial";
+}
+
+.pointsGained {
+    font-size: 3rem !important;
+}
+
+.quizOverContainer a:hover {
+    text-decoration: underline;
+}
+
+.quizOverContainer span {
+    font-size: 2rem;
+    margin: 1rem 0;
+}
+
 .quizQuestionsAndAns {
     border: 1px solid white;
     border-radius: 1rem;
@@ -353,6 +384,11 @@ body {
 @font-face {
     font-family: "lucy";
     src: url(fonts/lucy-the-cat-font/LucyTheCatRegular-Bg9x.ttf);
+}
+
+@font-face {
+    font-family: "anwutoktrial";
+    src: url(fonts/anwutoktrial-font/AnwutoktrialRegular-MVPMv.ttf);
 }
 
 @font-face {

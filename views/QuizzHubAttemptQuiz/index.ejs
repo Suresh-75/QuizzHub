@@ -25,9 +25,9 @@
             <p class="subIconName">Attmept Quiz</p>
         </div>
         <ul class="subSearchIcons">
-            <li><a><img src="/AttemptQuiz/images/ideas.png" alt=""></a></li>
-            <li><a><img src="/AttemptQuiz/images/friends.png" alt=""></a></li>
-            <li><a><img src="/AttemptQuiz/images/search.png" alt=""></a></li>
+            <li><a href="/createQuiz"><img src="/AttemptQuiz/images/ideas.png" alt=""></a></li>
+            <li><a href="/scoreCards"><img src="/AttemptQuiz/images/score.png" alt=""></a></li>
+            <li><a href="/serachFriend"><img src="/AttemptQuiz/images/search.png" alt=""></a></li>
         </ul>
     </div>
     <%if(foundQuiz){ %>
@@ -36,7 +36,12 @@
                 <section class="mainBodyContainer">
                     <main class="quizQuestionsAndAns">
                         <%if(!foundQuiz){%>
-                            <p>Over</p>
+                            <div class="quizOverContainer">
+                                <p>Score: <span><span class="pointsGained">
+                                            <%=score%>
+                                        </span>Points</span> </p>
+                                <span> <a href="/scoreCards">Check your SCORES</a> </span>
+                            </div>
                             <%}else{%>
                                 <p class="quizName">
                                     <%=foundQuiz.QuizName%>
@@ -89,11 +94,13 @@
                                     <button type="submit" class="nextBtn">NEXT-QUESTION</button>
                                     <%}%>
                                         <%if(!foundQuiz){%>
-                                            <button class="subBtn">SUBMIT</button>
+                                            <form method="POST" action="/updateScores/<%=userID%>/<%=QuizName%>/submit">
+                                                <input name="score" type="text" style="display: none;" value=<%=score%>>
+                                                <button type="submit" class="subBtn">SUBMIT</button>
+                                            </form>
                                             <%}else{%>
                                                 <button style="opacity: 0.5;" class="subBtn">SUBMIT</button>
                                                 <%}%>
-
                         </section>
                     </main>
                 </section>

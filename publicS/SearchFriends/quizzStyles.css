@@ -398,6 +398,11 @@ body {
     align-items: center;
 }
 
+.quizName {
+    width: 10rem;
+    border: 2px solid white !important;
+}
+
 .attemptQuizBtn {
     background-image: linear-gradient(to right, #00d2ff 0%, #3a7bd5 51%, #00d2ff 100%);
     padding: 15px 30px;
@@ -526,6 +531,30 @@ body {
     justify-content: space-between;
     align-items: center;
 }
+
+
+
+.createQuizBtn {
+    background-image: linear-gradient(to right, #00d2ff 0%, #3a7bd5 51%, #00d2ff 100%);
+    margin: 0 auto;
+    padding: 15px 45px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    box-shadow: 0 0 10px #000000;
+    border-radius: 10px;
+    display: block;
+}
+
+.createQuizBtn:hover {
+    background-position: right center;
+    /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+}
+
 
 
 @font-face {

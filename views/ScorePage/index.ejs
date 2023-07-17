@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/ScoreCard/styles.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <nav class="navBar">
+        <ul>
+            <li class="quizLogo">QuizzHub</li>
+            <ul class="userLinks">
+                <li><a href="">Home</a></li>
+                <li><a class="quizzLink" href="">Quiz</a></li>
+                <li><a href="">About</a></li>
+            </ul>
+            <li><button class="userIconBtn"><img src="/ScoreCard/images/user-svgrepo-com.svg" alt=""></button></li>
+        </ul>
+    </nav>
+    <div class="middleContainer">
+        <div>
+            <p class="subIconName">ScoreCard</p>
+        </div>
+        <ul class="subSearchIcons">
+            <li><a href="/createQuiz"><img src="/ScoreCard/images/ideas.png" alt=""></a></li>
+            <li><a href="/scoreCards"><img src="/ScoreCard/images/score.png" alt=""></a></li>
+            <li><a href="/serachFriend"><img src="/ScoreCard/images/search.png" alt=""></a></li>
+        </ul>
+    </div>
+    <section class="mainBodyContainer">
+        <div class="scoreBoard">
+            <%if(userScores.length){%>
+                <%for(let score of userScores){%>
+                    <section class="scoreCard">
+                        <span class="userDetails">
+                            <p class="quizName">
+                                <%=score.QuizName%><span class="madeBy"><br>-<%=score.createdUser%></span>
+                            </p>
+                            <!-- <p>Email-ID:Suresh@gmail.com</p> -->
+                        </span>
+                        <span class="pointCard">
+                            <p class="points">
+                                <%=score.score%>
+                            </p> Points
+                        </span>
+                    </section>
+                    <%}%>
+                        <%}else{%>
+                            <a class="attemptQuiz" href="/serachFriend">Attempt Quiz</a>
+                            <%}%>
+        </div>
+    </section>
+</body>
+
+</html>

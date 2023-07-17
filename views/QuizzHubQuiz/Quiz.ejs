@@ -18,7 +18,7 @@
                 <li><a href="">About</a></li>
             </ul>
             <!-- <li><button class="logOutBtn">Log-Out</button></li> -->
-            <li><button class="userIconBtn"><img src="/images/user-svgrepo-com.svg" alt=""></button></li>
+            <li><button class="userIconBtn"><img src="/SearchFriends//images/user-svgrepo-com.svg" alt=""></button></li>
         </ul>
     </nav>
     <div class="middleContainer">
@@ -27,7 +27,7 @@
         </div>
         <ul class="subSearchIcons">
             <li><a href="/createQuiz"><img src="/SearchFriends/images/ideas.png" alt=""></a></li>
-            <li><a><img src="/SearchFriends/images/friends.png" alt=""></a></li>
+            <li><a href="/scoreCards"><img src="/SearchFriends/images/score.png" alt=""></a></li>
             <li><a href="/serachFriend"><img src="/SearchFriends/images/search.png" alt=""></a></li>
         </ul>
     </div>
@@ -58,17 +58,28 @@
                                 <button class="addFriendBtn">Add-Friend</button>
                                 <main class="foundUserQuizs">
                                     <div class="foundUserQuiz">
-                                        <span>
-                                            <%= foundQuiz1.QuizName%>
-                                        </span><a href="/attemptQuiz/<%=foundQuiz1.username%>/<%=foundQuiz1.QuizName%>""
+                                        <%if(foundQuiz1===null){%>
+
+                                            <%}else{%>
+                                                <span>
+                                                    <%= foundQuiz1.QuizName%>
+                                                </span><a
+                                                    href="/attemptQuiz/<%=foundQuiz1.username%>/<%=foundQuiz1.QuizName%>""
                                             class=" attemptQuizBtn">Attempt
-                                            Quiz</a>
+                                                    Quiz</a>
+                                                <%}%>
+
                                     </div>
                                     <div class="foundUserQuiz">
-                                        <span>
-                                            <%= foundQuiz2.QuizName%>
-                                        </span><a href="/attemptQuiz/<%=foundQuiz1.username%>/<%=foundQuiz2.QuizName%>"
-                                            class="attemptQuizBtn">Attempt Quiz</a>
+                                        <%if(foundQuiz1===null){%>
+
+                                            <%}else{%>
+                                                <span>
+                                                    <%= foundQuiz2.QuizName%>
+                                                </span><a
+                                                    href="/attemptQuiz/<%=foundQuiz1.username%>/<%=foundQuiz2.QuizName%>"
+                                                    class="attemptQuizBtn">Attempt Quiz</a>
+                                                <%}%>
                                     </div>
                                 </main>
                             </div>
@@ -97,7 +108,7 @@
             <div class="userQuizDiv">
                 <%if(CurrentfoundQuiz1===null){ %>
                     <section class="quizCreatedByUser">
-                        <a href="/createQuiz" class="deleteQuizBtn">Create
+                        <a href="/createQuiz" class="createQuizBtn">Create
                             Quiz</a>
                     </section>
                     <% }else{ %>
@@ -113,7 +124,7 @@
                         <%}%>
                             <%if(CurrentfoundQuiz2===null){ %>
                                 <section class="quizCreatedByUser">
-                                    <a href="/createQuiz" class="deleteQuizBtn">Create
+                                    <a href="/createQuiz" class="createQuizBtn">Create
                                         Quiz</a>
                                 </section>
                                 <% }else{ %>
