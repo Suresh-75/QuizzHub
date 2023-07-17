@@ -231,8 +231,10 @@ app.post("/userSearchResults", async (req, res) => {
     }
     // res.render("QuizzHubQuiz/Quiz", { username })
 })
-app.post("/login", passport.authenticate("local"), (req, res) => {
-    res.redirect("/createQuiz")
+app.post("/login", passport.authenticate("local", {
+    successRedirect: '/createQuiz',
+    failureRedirect: '/login'
+}), (req, res) => {
 })
 app.post("/signUp", async (req, res) => {
     // res.send(req.body);

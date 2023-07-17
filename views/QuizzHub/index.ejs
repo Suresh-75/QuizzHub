@@ -34,7 +34,9 @@
                 <p class="subQuote">"Embrace the thrill of a <span>friendly challenge</span> , where quizzes become a
                     playground for
                     friendship and shared triumphs."</p>
-                <a href="/login" class="getStartedBtn">Get Started</a>
+                <% if(!currentUser){ %>
+                    <a href="/signUp" class="getStartedBtn">Get Started</a>
+                    <%}%>
             </span>
             <div class="imageDivision">
                 <img src="HomePage/images/vector copy.png" alt="">
